@@ -1,715 +1,264 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Axel — Polymath & AI Researcher</title>
+<title>AXEL — Polymath & AI</title>
 
-  <meta
-    name="description"
-    content="Axel — Independent polymath, researcher, mathematician, and AI developer."
-  />
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+body {
+    background: #0a0a0a;
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+nav a {
+    color: #888;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.hero {
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    padding: 8%;
+}
+
+.hero small {
+    color: #777;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 13vw, 170px);
+    line-height: .85;
+    letter-spacing: -8px;
+    margin: 25px 0;
+}
+
+.hero p {
+    max-width: 650px;
+    color: #999;
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+.cvs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #222;
+}
+
+.cv {
+    padding: 70px 8%;
+    min-height: 420px;
+}
+
+.cv:first-child {
+    border-right: 1px solid #222;
+}
+
+.number {
+    color: #555;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.cv h2 {
+    font-size: 52px;
+    margin: 25px 0;
+    letter-spacing: -3px;
+}
+
+.cv p {
+    color: #999;
+    max-width: 450px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.tags {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    border: 1px solid #333;
+    padding: 8px 13px;
+    border-radius: 30px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+footer {
+    border-top: 1px solid #222;
+    padding: 35px 8%;
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    font-size: 12px;
+}
+
+@media(max-width: 700px) {
+
+    nav a {
+        display: none;
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050505;
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 72px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 0 7%;
-
-      background: rgba(5, 5, 5, 0.78);
-      backdrop-filter: blur(15px);
-
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: 5px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
 
     .hero {
-      min-height: 100vh;
-
-      display: flex;
-      align-items: center;
-
-      padding: 120px 7% 80px;
-
-      position: relative;
-      overflow: hidden;
+        min-height: 65vh;
     }
 
-    .hero::before {
-      content: "";
-
-      position: absolute;
-
-      width: 600px;
-      height: 600px;
-
-      background: radial-gradient(
-        circle,
-        rgba(255,255,255,0.10),
-        transparent 70%
-      );
-
-      top: 10%;
-      right: -200px;
-
-      pointer-events: none;
+    .hero h1 {
+        font-size: 80px;
     }
 
-    .hero-content {
-      max-width: 950px;
-      position: relative;
-      z-index: 2;
+    .cvs {
+        grid-template-columns: 1fr;
     }
 
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 25px;
+    .cv:first-child {
+        border-right: none;
+        border-bottom: 1px solid #222;
     }
 
-    h1 {
-      font-size: clamp(60px, 10vw, 145px);
-      line-height: 0.88;
-      letter-spacing: -7px;
-      margin-bottom: 35px;
+    .cv h2 {
+        font-size: 42px;
     }
-
-    .hero-subtitle {
-      max-width: 720px;
-      font-size: clamp(20px, 3vw, 32px);
-      color: #bdbdbd;
-      line-height: 1.35;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      padding: 14px 25px;
-      border: 1px solid #444;
-      border-radius: 100px;
-      font-size: 14px;
-      transition: 0.25s;
-    }
-
-    .button:hover {
-      background: white;
-      color: black;
-      border-color: white;
-    }
-
-    /* =========================
-       SECTION
-    ========================= */
-
-    section {
-      padding: 110px 7%;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .section-label {
-      color: #777;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 11px;
-      margin-bottom: 20px;
-    }
-
-    .section-title {
-      font-size: clamp(40px, 6vw, 75px);
-      letter-spacing: -3px;
-      margin-bottom: 50px;
-    }
-
-    /* =========================
-       TWO IDENTITIES
-    ========================= */
-
-    .identity-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .identity {
-      min-height: 430px;
-
-      padding: 45px;
-
-      border: 1px solid #292929;
-      background: #0a0a0a;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      transition: 0.3s;
-    }
-
-    .identity:hover {
-      transform: translateY(-5px);
-      border-color: #555;
-    }
-
-    .identity-number {
-      font-size: 13px;
-      color: #666;
-    }
-
-    .identity h3 {
-      font-size: 50px;
-      letter-spacing: -2px;
-      margin-bottom: 20px;
-    }
-
-    .identity p {
-      color: #999;
-      max-width: 500px;
-    }
-
-    .identity-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 30px;
-    }
-
-    .tag {
-      padding: 7px 12px;
-      border: 1px solid #303030;
-      border-radius: 50px;
-      color: #aaa;
-      font-size: 12px;
-    }
-
-    /* =========================
-       CV
-    ========================= */
-
-    .cv-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-    }
-
-    .cv-item {
-      padding: 25px 0;
-      border-bottom: 1px solid #222;
-    }
-
-    .cv-year {
-      color: #666;
-      font-size: 13px;
-      margin-bottom: 8px;
-    }
-
-    .cv-item h4 {
-      font-size: 21px;
-      margin-bottom: 5px;
-    }
-
-    .cv-item p {
-      color: #888;
-      font-size: 14px;
-    }
-
-    /* =========================
-       RESEARCH
-    ========================= */
-
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .research-card {
-      padding: 30px;
-      min-height: 220px;
-      border: 1px solid #242424;
-      background: #080808;
-    }
-
-    .research-card span {
-      font-size: 12px;
-      color: #666;
-    }
-
-    .research-card h4 {
-      font-size: 25px;
-      margin: 30px 0 10px;
-    }
-
-    .research-card p {
-      color: #888;
-      font-size: 14px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
 
     footer {
-      padding: 60px 7%;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      border-top: 1px solid #222;
-
-      color: #666;
-      font-size: 13px;
-    }
-
-    footer strong {
-      color: white;
-      letter-spacing: 4px;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 800px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      h1 {
-        letter-spacing: -4px;
-      }
-
-      .identity-grid,
-      .cv-grid,
-      .research-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .identity {
-        min-height: 350px;
-        padding: 30px;
-      }
-
-      .identity h3 {
-        font-size: 40px;
-      }
-
-      section {
-        padding: 80px 6%;
-      }
-
-      footer {
         flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
-      }
+        gap: 10px;
     }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
+<nav>
+    <div class="logo">AXEL</div>
 
-  <nav>
-    <a href="#" class="logo">AXEL</a>
-
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#cv">CV</a>
-      <a href="#research">Research</a>
-      <a href="#contact">Contact</a>
+    <div>
+        <a href="#cv1">POLYMATH</a>
+        <a href="#cv2">AI</a>
     </div>
-  </nav>
+</nav>
 
 
-  <!-- HERO -->
+<section class="hero">
 
-  <header class="hero">
+    <div>
 
-    <div class="hero-content">
+        <small>Independent Researcher</small>
 
-      <div class="eyebrow">
-        Independent Researcher · Polymath · AI
-      </div>
+        <h1>AXEL</h1>
 
-      <h1>AXEL</h1>
-
-      <p class="hero-subtitle">
-        Exploring mathematics, science, philosophy and artificial
-        intelligence through independent research, algorithms and
-        interdisciplinary thinking.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#cv" class="button">
-          View CV
-        </a>
-
-        <a href="#research" class="button">
-          Explore Research
-        </a>
-      </div>
+        <p>
+            Exploring fundamental ideas through philosophy,
+            mathematics and science — and transforming mathematical
+            thinking into new algorithms and artificial intelligence.
+        </p>
 
     </div>
 
-  </header>
+</section>
 
 
-  <!-- ABOUT -->
+<section class="cvs">
 
-  <section id="about">
+    <!-- CV ONE -->
 
-    <div class="section-label">
-      01 — Identity
-    </div>
+    <div class="cv" id="cv1">
 
-    <h2 class="section-title">
-      Two ways of thinking.
-    </h2>
+        <div class="number">CV 01</div>
 
+        <h2>Polymath</h2>
 
-    <div class="identity-grid">
+        <p>
+            A multidisciplinary path focused on understanding the
+            fundamental structures behind knowledge, reality and
+            scientific reasoning.
+        </p>
 
-      <!-- POLYMATH -->
-
-      <article class="identity">
-
-        <div class="identity-number">
-          01 / POLYMATH
-        </div>
-
-        <div>
-
-          <h3>Polymath</h3>
-
-          <p>
-            An interdisciplinary researcher interested in understanding
-            fundamental ideas across mathematics, physics, philosophy,
-            neuroscience, psychology and science.
-          </p>
-
-          <div class="identity-list">
-
+        <div class="tags">
+            <span class="tag">Philosophy</span>
             <span class="tag">Mathematics</span>
             <span class="tag">Physics</span>
-            <span class="tag">Philosophy</span>
-            <span class="tag">Neuroscience</span>
-            <span class="tag">Psychology</span>
-            <span class="tag">Research</span>
-
-          </div>
-
+            <span class="tag">Science</span>
         </div>
 
-      </article>
+    </div>
 
 
-      <!-- AI -->
+    <!-- CV TWO -->
 
-      <article class="identity">
+    <div class="cv" id="cv2">
 
-        <div class="identity-number">
-          02 / ARTIFICIAL INTELLIGENCE
-        </div>
+        <div class="number">CV 02</div>
 
-        <div>
+        <h2>AI</h2>
 
-          <h3>AI</h3>
+        <p>
+            Developing artificial intelligence through mathematical
+            thinking, computational research and the creation of
+            new algorithms.
+        </p>
 
-          <p>
-            Developing computational ideas, algorithms and intelligent
-            systems while exploring the intersection between mathematics,
-            computation and artificial intelligence.
-          </p>
-
-          <div class="identity-list">
-
+        <div class="tags">
             <span class="tag">Artificial Intelligence</span>
             <span class="tag">Algorithms</span>
-            <span class="tag">Python</span>
-            <span class="tag">Julia</span>
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Computational Research</span>
-
-          </div>
-
+            <span class="tag">Computation</span>
+            <span class="tag">Research</span>
         </div>
-
-      </article>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- CV -->
+<footer>
 
-  <section id="cv">
+    <span>AXEL</span>
 
-    <div class="section-label">
-      02 — Curriculum Vitae
-    </div>
+    <span>Polymath · AI · Algorithms</span>
 
-    <h2 class="section-title">
-      The work behind the ideas.
-    </h2>
+    <span>© 2026</span>
 
-    <div class="cv-grid">
-
-      <div>
-
-        <div class="cv-item">
-          <div class="cv-year">EDUCATION</div>
-          <h4>Bachelor of Accounting</h4>
-          <p>
-            Beirut Arab University
-          </p>
-        </div>
-
-        <div class="cv-item">
-          <div class="cv-year">RESEARCH</div>
-          <h4>Independent Research</h4>
-          <p>
-            Mathematics · Science · Philosophy · AI
-          </p>
-        </div>
-
-        <div class="cv-item">
-          <div class="cv-year">DISCIPLINES</div>
-          <h4>Interdisciplinary Research</h4>
-          <p>
-            Connecting ideas across multiple scientific fields.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div>
-
-        <div class="cv-item">
-          <div class="cv-year">COMPUTATION</div>
-          <h4>Algorithm Development</h4>
-          <p>
-            Mathematical and computational algorithm design.
-          </p>
-        </div>
-
-        <div class="cv-item">
-          <div class="cv-year">TECHNOLOGY</div>
-          <h4>Artificial Intelligence</h4>
-          <p>
-            Exploring intelligent systems and computational models.
-          </p>
-        </div>
-
-        <div class="cv-item">
-          <div class="cv-year">TOOLS</div>
-          <h4>Technical Research Stack</h4>
-          <p>
-            Python · Julia · Lean · SymPy · GitHub
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- RESEARCH -->
-
-  <section id="research">
-
-    <div class="section-label">
-      03 — Research
-    </div>
-
-    <h2 class="section-title">
-      Ideas into systems.
-    </h2>
-
-    <div class="research-grid">
-
-      <article class="research-card">
-
-        <span>01</span>
-
-        <h4>Mathematics</h4>
-
-        <p>
-          Mathematical structures, algorithms, algebra and
-          problem-solving frameworks.
-        </p>
-
-      </article>
-
-
-      <article class="research-card">
-
-        <span>02</span>
-
-        <h4>AI & Algorithms</h4>
-
-        <p>
-          Computational approaches to intelligent systems,
-          prediction and mathematical reasoning.
-        </p>
-
-      </article>
-
-
-      <article class="research-card">
-
-        <span>03</span>
-
-        <h4>Interdisciplinary Science</h4>
-
-        <p>
-          Connecting mathematics, physics, neuroscience,
-          philosophy and computation.
-        </p>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
-
-  <section id="contact">
-
-    <div class="section-label">
-      04 — Contact
-    </div>
-
-    <h2 class="section-title">
-      Let's explore an idea.
-    </h2>
-
-    <p style="max-width:600px;color:#888;">
-      For research, collaboration, projects or intellectual exchange,
-      get in touch with Axel.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a href="mailto:your@email.com" class="button">
-        Contact Axel
-      </a>
-
-      <a href="#" class="button">
-        Research Portfolio
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <strong>AXEL</strong>
-
-    <span>
-      Polymath · Researcher · AI
-    </span>
-
-    <span>
-      © 2026 Axel
-    </span>
-
-  </footer>
-
-
-  <script>
-
-    // Small scroll effect for navigation
-
-    window.addEventListener("scroll", function () {
-
-      const nav = document.querySelector("nav");
-
-      if (window.scrollY > 50) {
-        nav.style.background = "rgba(5,5,5,0.94)";
-      } else {
-        nav.style.background = "rgba(5,5,5,0.78)";
-      }
-
-    });
-
-  </script>
+</footer>
 
 </body>
 </html>
+```
