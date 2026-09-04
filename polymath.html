@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AXEL — Polymath CV</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0a0a0a;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+nav {
+    height: 70px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+nav a {
+    color: #777;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+main {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    padding: 8%;
+}
+
+.content {
+    max-width: 800px;
+}
+
+.number {
+    color: #555;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+h1 {
+    font-size: clamp(60px, 10vw, 120px);
+    letter-spacing: -6px;
+    margin: 25px 0;
+}
+
+p {
+    color: #999;
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 650px;
+}
+
+.cv-info {
+    margin-top: 45px;
+}
+
+.cv-info span {
+    display: block;
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.download {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 16px 28px;
+    border: 1px solid #444;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    transition: .25s;
+}
+
+.download:hover {
+    background: white;
+    color: black;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">AXEL</div>
+    <a href="index.html">← BACK</a>
+</nav>
+
+<main>
+
+    <div class="content">
+
+        <div class="number">CV 01 — POLYMATH</div>
+
+        <h1>Polymath</h1>
+
+        <p>
+            My work explores philosophy, mathematics and science,
+            with a focus on understanding fundamental ideas and
+            connecting knowledge across disciplines.
+        </p>
+
+        <div class="cv-info">
+
+            <span>CURRICULUM VITAE</span>
+
+            <a
+                href="polymath-cv.pdf"
+                class="download"
+                download
+            >
+                Download My CV ↓
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>
