@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,159 +7,246 @@
 <title>AXEL — Polymath & AI</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background: #0a0a0a;
+    background: #070707;
     color: #f5f5f5;
-    font-family: Arial, sans-serif;
+    font-family: Inter, Arial, sans-serif;
+    overflow-x: hidden;
 }
 
+/* NAV */
+
 nav {
-    height: 70px;
+    height: 82px;
+    padding: 0 6vw;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 6%;
-    border-bottom: 1px solid #222;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 6px;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 7px;
 }
 
-nav a {
-    color: #888;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 14px;
+.nav-text {
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 
-nav a:hover {
-    color: white;
-}
+/* HERO */
 
 .hero {
-    min-height: 72vh;
+    min-height: 58vh;
+    padding: 10vh 6vw;
+
     display: flex;
     align-items: center;
-    padding: 8%;
+
+    position: relative;
 }
 
-.hero small {
-    color: #777;
+.hero-content {
+    max-width: 1000px;
+}
+
+.eyebrow {
+    color: #666;
+    font-size: 11px;
     letter-spacing: 4px;
     text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
-.hero h1 {
+h1 {
     font-size: clamp(70px, 13vw, 170px);
-    line-height: .85;
-    letter-spacing: -8px;
-    margin: 25px 0;
+    line-height: .82;
+    letter-spacing: -9px;
+    font-weight: 600;
 }
 
-.hero p {
+.hero-description {
     max-width: 650px;
-    color: #999;
-    font-size: 21px;
-    line-height: 1.5;
-}
+    margin-top: 45px;
 
-.cvs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 1px solid #222;
-}
-
-.cv {
-    padding: 70px 8%;
-    min-height: 420px;
-}
-
-.cv:first-child {
-    border-right: 1px solid #222;
-}
-
-.number {
-    color: #555;
-    font-size: 13px;
-    letter-spacing: 3px;
-}
-
-.cv h2 {
-    font-size: 52px;
-    margin: 25px 0;
-    letter-spacing: -3px;
-}
-
-.cv p {
-    color: #999;
-    max-width: 450px;
-    font-size: 17px;
+    color: #888;
+    font-size: 18px;
     line-height: 1.7;
 }
 
-.tags {
-    margin-top: 35px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+/* TWO WAYS */
+
+.thinking {
+    border-top: 1px solid rgba(255,255,255,.08);
 }
 
-.tag {
-    border: 1px solid #333;
-    padding: 8px 13px;
-    border-radius: 30px;
-    color: #aaa;
-    font-size: 12px;
-}
+.section-heading {
+    padding: 35px 6vw;
 
-footer {
-    border-top: 1px solid #222;
-    padding: 35px 8%;
     display: flex;
     justify-content: space-between;
+
     color: #555;
-    font-size: 12px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-@media(max-width: 700px) {
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
-    nav a {
-        display: none;
-    }
+.card {
+    min-height: 390px;
+    padding: 55px 6vw;
+
+    color: white;
+    text-decoration: none;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: .45s ease;
+}
+
+.card:first-child {
+    border-right: 1px solid rgba(255,255,255,.08);
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,.07),
+        transparent 70%
+    );
+
+    right: -200px;
+    bottom: -250px;
+
+    transition: .5s;
+}
+
+.card:hover {
+    background: #0d0d0d;
+}
+
+.card:hover::after {
+    transform: scale(1.4);
+}
+
+.card-number {
+    color: #555;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.card h2 {
+    font-size: clamp(45px, 6vw, 80px);
+    letter-spacing: -4px;
+    font-weight: 500;
+
+    margin-top: 75px;
+}
+
+.card-subtitle {
+    margin-top: 15px;
+
+    color: #777;
+    font-size: 15px;
+}
+
+.card-arrow {
+    position: absolute;
+
+    right: 6vw;
+    bottom: 55px;
+
+    color: #666;
+    font-size: 14px;
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.card:hover .card-arrow {
+    color: white;
+    transform: translateX(8px);
+}
+
+/* FOOTER */
+
+footer {
+    padding: 35px 6vw;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    color: #444;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
 
     .hero {
-        min-height: 65vh;
+        min-height: 55vh;
     }
 
-    .hero h1 {
-        font-size: 80px;
+    h1 {
+        letter-spacing: -5px;
     }
 
-    .cvs {
+    .cards {
         grid-template-columns: 1fr;
     }
 
-    .cv:first-child {
-        border-right: none;
-        border-bottom: 1px solid #222;
+    .card {
+        min-height: 330px;
     }
 
-    .cv h2 {
-        font-size: 42px;
+    .card:first-child {
+        border-right: none;
+    }
+
+    .card h2 {
+        margin-top: 55px;
     }
 
     footer {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
     }
 }
 </style>
@@ -170,26 +256,24 @@ footer {
 
 <nav>
     <div class="logo">AXEL</div>
-
-    <div>
-        <a href="#cv1">POLYMATH</a>
-        <a href="#cv2">AI</a>
-    </div>
+    <div class="nav-text">RESEARCH / THINKING</div>
 </nav>
 
 
 <section class="hero">
 
-    <div>
+    <div class="hero-content">
 
-        <small>Independent Researcher</small>
+        <div class="eyebrow">
+            Independent Researcher
+        </div>
 
         <h1>AXEL</h1>
 
-        <p>
-            Exploring fundamental ideas through philosophy,
-            mathematics and science — and transforming mathematical
-            thinking into new algorithms and artificial intelligence.
+        <p class="hero-description">
+            A multidisciplinary pursuit of knowledge through
+            philosophy, mathematics and science — alongside the
+            development of artificial intelligence and new algorithms.
         </p>
 
     </div>
@@ -197,27 +281,54 @@ footer {
 </section>
 
 
-.cv {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: 0.3s;
-}
+<section class="thinking">
 
-.cv:hover {
-    background: #111;
-}
+    <div class="section-heading">
+        <span>Two ways of thinking</span>
+        <span>01 — 02</span>
+    </div>
 
-.enter {
-    margin-top: 45px;
-    color: #777;
-    font-size: 13px;
-    letter-spacing: 2px;
-}
 
-.cv:hover .enter {
-    color: white;
-}
+    <div class="cards">
+
+        <a href="polymath.html" class="card">
+
+            <div class="card-number">
+                01 / POLYMATH
+            </div>
+
+            <h2>Polymath</h2>
+
+            <div class="card-subtitle">
+                Philosophy · Mathematics · Science
+            </div>
+
+            <div class="card-arrow">
+                EXPLORE →
+            </div>
+
+        </a>
+
+
+        <a href="ai.html" class="card">
+
+            <div class="card-number">
+                02 / ARTIFICIAL INTELLIGENCE
+            </div>
+
+            <h2>AI</h2>
+
+            <div class="card-subtitle">
+                Artificial Intelligence · New Algorithms
+            </div>
+
+            <div class="card-arrow">
+                EXPLORE →
+            </div>
+
+        </a>
+
+    </div>
 
 </section>
 
@@ -226,7 +337,7 @@ footer {
 
     <span>AXEL</span>
 
-    <span>Polymath · AI · Algorithms</span>
+    <span>POLYMATH · AI · ALGORITHMS</span>
 
     <span>© 2026</span>
 
@@ -234,4 +345,3 @@ footer {
 
 </body>
 </html>
-```
